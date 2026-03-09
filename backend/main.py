@@ -23,6 +23,19 @@ app = FastAPI(
     version="1.0.0"
 )
 
+origins = [
+    "http://localhost:5173",
+    "https://floracount-ih9j.vercel.app"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # Configurar CORS
 app.add_middleware(
     CORSMiddleware,
