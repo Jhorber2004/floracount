@@ -35,7 +35,6 @@ app.add_middleware(
 
 # Configuración CORS
 origins = [
-    "http://localhost:5173",
     "https://floracount-ih9j.vercel.app"
 ]
 
