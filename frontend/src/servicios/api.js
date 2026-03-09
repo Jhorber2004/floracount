@@ -1,9 +1,9 @@
-// API Production URL - v2
-import axios from 'axios'
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://floracount-production.up.railway.app'
-})
+  baseURL: import.meta.env.VITE_API_URL
+});
+
 
 export const proveedores = {
   listar: () => api.get('/proveedores'),
