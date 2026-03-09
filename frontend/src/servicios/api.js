@@ -4,29 +4,28 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL
 });
 
-
 export const proveedores = {
-  listar: () => api.get('/proveedores'),
+  listar: () => api.get('/proveedores/'),
   obtener: (codigo) => api.get(`/proveedores/${codigo}`)
 }
 
 export const variedades = {
-  listar: () => api.get('/variedades')
+  listar: () => api.get('/variedades/')
 }
 
 export const mallas = {
-  registrar: (datos) => api.post('/mallas', datos),
+  registrar: (datos) => api.post('/mallas/', datos),
   listarPorProveedor: (codigo) => api.get(`/mallas/${codigo}`)
 }
 
 export const conteos = {
-  registrar: (datos) => api.post('/conteos', datos),
-  listar: () => api.get('/conteos'),
+  registrar: (datos) => api.post('/conteos/', datos),
+  listar: () => api.get('/conteos/'),
   alertas: () => api.get('/conteos/alertas')
 }
 
 export const estadosFlor = {
-  listar: () => api.get('/estados-flor')
+  listar: () => api.get('/estados-flor/')
 }
 
 export default api
